@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\LeaderBoardController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,6 +14,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+
+
+Route::get("",[LeaderBoardController::class,'index'])->name('leader-board.index');
+Route::get("leader-board/recalculate",[LeaderBoardController::class,'recalculate'])->name('leader-board.recalculate');
